@@ -5,15 +5,17 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="utils.Controller.VentanaFirma">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="413.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="utils.Controller.VentanaFirma">
    <children>
-      <Button id="ButtonVentanaFirma" fx:id="ButtonGenerate" layoutX="433.0" layoutY="104.0" mnemonicParsing="false" onAction="#callGenerateFirm" prefHeight="45.0" prefWidth="118.0" text="Firmar" />
-      <Label fx:id="lbl1" layoutX="41.0" layoutY="79.0" prefHeight="18.0" prefWidth="308.0" text="Escribe el texto para firmar " />
-      <TextField fx:id="textfieldText" layoutX="41.0" layoutY="98.0" prefHeight="58.0" prefWidth="375.0" />
-      <TextField id="textfield2" fx:id="textfield2" editable="false" layoutX="34.0" layoutY="196.0" prefHeight="126.0" prefWidth="535.0" />
-      <Button id="ButtonVentanaFirma" fx:id="ButtonSave" layoutX="34.0" layoutY="331.0" mnemonicParsing="false" onAction="#callSaveInBD" prefHeight="46.0" prefWidth="213.0" text="Save Signature" />
-      <Label fx:id="lblShowFirm" layoutX="34.0" layoutY="200.0" prefHeight="120.0" prefWidth="535.0" textFill="#3ac92b" />
-      <Label fx:id="label2" layoutX="34.0" layoutY="177.0" prefHeight="18.0" prefWidth="308.0" text="Firma Digital Generada" />
-      <Button id="ButtonVentanaFirma" fx:id="ButtonCancelar" layoutX="319.0" layoutY="331.0" mnemonicParsing="false" onAction="#ClosedWindows" prefHeight="46.0" prefWidth="213.0" text="Cancelar" />
+      <Button id="ButtonVentanaFirma" fx:id="ButtonSearchDoc" layoutX="426.0" layoutY="52.0" mnemonicParsing="false" onAction="#callBuscarDocument" prefHeight="45.0" prefWidth="118.0" text="Buscar " />
+      <Label fx:id="lbl1" layoutX="41.0" layoutY="31.0" prefHeight="18.0" prefWidth="308.0" text="Seleccione Documento a Firmar" />
+      <TextField editable="false" layoutX="34.0" layoutY="61.0" prefHeight="27.0" prefWidth="375.0" />
+      <TextField id="textfield2" editable="false" layoutX="33.0" layoutY="137.0" prefHeight="126.0" prefWidth="535.0" />
+      <Button id="ButtonVentanaFirma" fx:id="ButtonFirm" layoutX="33.0" layoutY="294.0" mnemonicParsing="false" onAction="#callFirmDoc" prefHeight="46.0" prefWidth="213.0" text="Firmar Documento" />
+      <Label fx:id="lblShowFirm" layoutX="33.0" layoutY="140.0" prefHeight="120.0" prefWidth="535.0" textFill="#3ac92b" />
+      <Label layoutX="34.0" layoutY="108.0" prefHeight="18.0" prefWidth="308.0" text="Firma Digital Generada" />
+      <Button id="ButtonVentanaFirma" fx:id="ButtonCancelar" layoutX="194.0" layoutY="353.0" mnemonicParsing="false" onAction="#ClosedWindows" prefHeight="46.0" prefWidth="213.0" text="Cancelar" />
+      <Button id="ButtonVentanaFirma" fx:id="ButtonSave" layoutX="342.0" layoutY="294.0" mnemonicParsing="false" onAction="#callSaveInBD" prefHeight="46.0" prefWidth="213.0" text="Guardar Firm" />
+      <Label fx:id="lblAddress" layoutX="34.0" layoutY="61.0" prefHeight="27.0" prefWidth="375.0" />
    </children>
 </AnchorPane>

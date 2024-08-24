@@ -1,68 +1,75 @@
 package utils.Controller;
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import utils.service.DigitalSignature;
 
-
 public class VentanaFirma {
-    PrincipalC controller = new PrincipalC();
+    PrincipalC principal_controller = new PrincipalC();
     Stage stage = new Stage();
-  
+
     DigitalSignature firmarDigitalmente = new DigitalSignature();
     String publickeyString;
     String privateKeyString;
     String textoFirmado;
-    LoginC controlLogin = new LoginC();
-    int nombreuser;
 
     @FXML
     private Button ButtonCancelar;
 
     @FXML
-    private Button ButtonGenerate;
+    private Button ButtonFirm;
 
     @FXML
     private Button ButtonSave;
 
     @FXML
-    private Label label2;
+    private Button ButtonSearchDoc;
 
     @FXML
     private Label lbl1;
+
+    @FXML
+    private Label lblAddress;
+
     @FXML
     private Label lblShowFirm;
-    
+
+    // ----------------------------------------------------------------------------------------------/
+    @FXML
+    void callBuscarDocument(ActionEvent event) {
+
+    }
 
     @FXML
-    private TextField textfieldText;
+    void callFirmDoc(ActionEvent event) {
+
+    }
 
     @FXML
-    private TextField textfield2;
+    void callSaveInBD(ActionEvent event) {
+
+    }
 
     @FXML
     void ClosedWindows(ActionEvent event) {
         this.stage.close();
-        controller.show();
+        principal_controller.show();
     }
 
     
-    public void inicio(Stage stage, String nombre ,PrincipalC principalC) {
-       this.stage= stage;
-       controller=principalC;
-       
-    }
-    
-    public void ShowFirm(String text){
+
+    public void ShowFirm(String text) {
         lblShowFirm.setText(text);
         lblShowFirm.setWrapText(true);
-        
+
     }
 
+    public void init(Stage stage, PrincipalC principalC) {
+        principal_controller=principalC;
+        this.stage=stage;
+    }
 
 }

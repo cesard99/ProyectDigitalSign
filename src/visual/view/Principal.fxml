@@ -7,12 +7,14 @@
 
 <AnchorPane id="lbluser" fx:id="VentanaP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="utils.Controller.PrincipalC">
    <children>
-      <Button id="ButtonPrincipal" fx:id="ButtonDisconect" layoutX="240.0" layoutY="314.0" mnemonicParsing="false" onAction="#ClosedThisWindows" prefHeight="51.0" prefWidth="135.0" text="Disconect" />
-      <Label id="lblPrincipal" layoutX="25.0" layoutY="121.0" prefHeight="17.0" prefWidth="173.0" text="Generate Digital Signature" />
-      <Button id="ButtonPrincipal" fx:id="ButtonGenerate" layoutX="31.0" layoutY="148.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="135.0" text="Generate" />
-      <Label id="lblPrincipal" layoutX="432.0" layoutY="120.0" prefHeight="18.0" prefWidth="158.0" text="Verify digital signature" />
-      <Button id="ButtonPrincipal" fx:id="ButtonVerify" layoutX="432.0" layoutY="148.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="135.0" text="Verify" />
+      <Button id="ButtonPrincipal" fx:id="ButtonDisconect" layoutX="240.0" layoutY="314.0" mnemonicParsing="false" onAction="#ClosedThisWindows" prefHeight="51.0" prefWidth="135.0" text="Desconectar" />
+      <Label id="lblPrincipal" layoutX="36.0" layoutY="122.0" prefHeight="17.0" prefWidth="135.0" text="Generar Claves RSA" />
+      <Button id="ButtonPrincipal" fx:id="ButtonGenerate" layoutX="31.0" layoutY="148.0" mnemonicParsing="false" onAction="#CallGenerateKey" prefHeight="51.0" prefWidth="135.0" text="Generar " />
+      <Label id="lblPrincipal" layoutX="438.0" layoutY="121.0" prefHeight="18.0" prefWidth="129.0" text="Verificar Firma" />
+      <Button id="ButtonPrincipal" fx:id="ButtonVerify" layoutX="432.0" layoutY="148.0" mnemonicParsing="false" onAction="#call_verificy" prefHeight="51.0" prefWidth="135.0" text="Verificar" />
       <TextField id="textfield2" fx:id="textfield2" disable="true" editable="false" layoutX="25.0" layoutY="22.0" prefHeight="18.0" prefWidth="146.0" />
       <Label fx:id="lbluser" layoutX="25.0" layoutY="21.0" prefHeight="26.0" prefWidth="146.0" />
+      <Button id="ButtonPrincipal" fx:id="ButtonVerify1" layoutX="240.0" layoutY="148.0" mnemonicParsing="false" onAction="#call_firm" prefHeight="51.0" prefWidth="135.0" text="Firmar" />
+      <Label id="lblPrincipal" layoutX="243.0" layoutY="121.0" prefHeight="18.0" prefWidth="129.0" text="Firmar Documento" />
    </children>
 </AnchorPane>

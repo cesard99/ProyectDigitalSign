@@ -10,12 +10,12 @@ public class App extends Application{
         Progress frame = new Progress(null,null);
         frame.setVisible(true);
         controller.showWindow1();
-       
         
     }
 
     public static void main(String [] args){
         launch(args);
+        
     }
 
 }

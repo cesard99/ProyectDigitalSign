@@ -19,7 +19,6 @@ import utils.dto.Registrer_DTO;
 import utils.service.ServicesLocator;
 import javafx.scene.image.Image;
 
-
 public class LoginC {
     private Stage stage;
 
@@ -30,89 +29,77 @@ public class LoginC {
 
     @FXML
     private Button ButtonCancel;
-      @FXML
+    @FXML
     private PasswordField textfieldpass;
 
     @FXML
     private TextField textfielduser;
     private ArrayList<Registrer_DTO> listaUsuarios;
-	private Registrer_DTO user;
-    
-
-
+    private Registrer_DTO user;
 
     @FXML
     void CloseWindows(ActionEvent event) {
         this.stage.close();
 
-
     }
 
     @FXML
     void WindowsPrincipal(ActionEvent event) throws Exception {
-          if (verify()){
-               System.out.println(user.getName());
-               
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/visual/view/Principal.fxml"));
-                Parent root = loader.load();
-                PrincipalC  controller= loader.getController();
-                Scene scene = new Scene(root);
-                Stage stage = new Stage();
-                scene.getStylesheets().add(getClass().getResource("/visual/Style/Principal.css").toExternalForm());
-                stage.setScene(scene);
-                Image icon = new Image("/Img/ImagenCodigo2.png");
-                stage.setTitle("Ventana Principal");
-                stage.getIcons().add(icon);
-                controller.init(stage,user.getName(), this);
-                stage.show();
-                this.stage.close();
+        if (verify()) {
+            System.out.println(user.getName());
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/visual/view/Principal.fxml"));
+            Parent root = loader.load();
+            PrincipalC controller = loader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            scene.getStylesheets().add(getClass().getResource("/visual/Style/Principal.css").toExternalForm());
+            stage.setScene(scene);
+            Image icon = new Image("/Img/ImagenCodigo2.png");
+            stage.setTitle("Ventana Principal");
+            stage.getIcons().add(icon);
+            controller.init(stage, user.getName(), this);
+            stage.show();
+            this.stage.close();
         }
-        
-
 
     }
 
     public void setStage(Stage primaryStage) {
-        this.stage=primaryStage;
+        this.stage = primaryStage;
     }
-     
 
-
-    public boolean verify() throws ClassNotFoundException, SQLException, IOException{
-       boolean bandera=false;
-          listaUsuarios = ServicesLocator.getRegistrer_Services().selectAllUsers();          
-             for(int i=0 ; i<listaUsuarios.size() && !bandera ; i++ ){
-                Registrer_DTO u = listaUsuarios.get(i);
-                if(u.getName().equals(textfielduser.getText())){
-                    String pass = Encription.decode(Definicion.SECRET_KEY_PASSWORD, u.getPss());
-                    if(pass.equals(textfieldpass.getText())){
-                        user=u;
-                        bandera=true;
-                    }else{
-                       lblError.setText("La contraseña es incorrecta");
-                       lblError.setVisible(true);
-                    }
-                }else{
-                    lblError.setText("El nombre es incorrecto");
+    public boolean verify() throws ClassNotFoundException, SQLException, IOException {
+        boolean bandera = false;
+        listaUsuarios = ServicesLocator.getRegistrer_Services().selectAllUsers();
+        for (int i = 0; i < listaUsuarios.size() && !bandera; i++) {
+            Registrer_DTO u = listaUsuarios.get(i);
+            if (u.getName().equals(textfielduser.getText())) {
+                String pass = Encription.decode(Definicion.SECRET_KEY_PASSWORD, u.getPss());
+                if (pass.equals(textfieldpass.getText())) {
+                    user = u;
+                    bandera = true;
+                } else {
+                    lblError.setText("La contraseña es incorrecta");
                     lblError.setVisible(true);
                 }
+            } else {
+                lblError.setText("El nombre es incorrecto");
+                lblError.setVisible(true);
             }
-       
-          if(!bandera){ // si la bandera es true el significa que existe el usuario y si la bandera sigue en false entra en este if 
+        }
+
+        if (!bandera) { // si la bandera es true el significa que existe el usuario y si la bandera
+                        // sigue en false entra en este if
             throw new IllegalArgumentException("El usuario no se encuentra en la Base de Datos");
-          }
-        
+        }
 
         return bandera;
     }
-
-  
 
     public void show() {
         stage.show();
 
     }
-
 
     public void RestartTextFields() {
         textfieldpass.setText("");
@@ -121,7 +108,4 @@ public class LoginC {
 
     }
 
-    
-
-    
 }
