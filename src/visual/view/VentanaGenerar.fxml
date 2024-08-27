@@ -11,7 +11,9 @@
       <Label layoutX="49.0" layoutY="110.0" prefHeight="17.0" prefWidth="196.0" text="Ingrese nuevamente  la Contraseña " />
       <PasswordField fx:id="fieldPass1" layoutX="49.0" layoutY="67.0" prefHeight="25.0" prefWidth="224.0" />
       <PasswordField fx:id="fieldpass2" layoutX="49.0" layoutY="136.0" prefHeight="25.0" prefWidth="224.0" />
-      <Button id="ButtonVentanaGenerar" fx:id="ButtonGenerate" layoutX="364.0" layoutY="87.0" mnemonicParsing="false" onAction="#CallGenerateKeys" prefHeight="47.0" prefWidth="170.0" text="Generar Claves" />
-      <Button id="ButtonVentanaGenerar" fx:id="ButtonBack" layoutX="215.0" layoutY="295.0" mnemonicParsing="false" onAction="#CallShowPrincipal" prefHeight="47.0" prefWidth="170.0" text="Volver " />
+      <Button id="ButtonVentanaGenerar" fx:id="ButtonGenerate" layoutX="40.0" layoutY="177.0" mnemonicParsing="false" onAction="#CallGenerateKeys" prefHeight="47.0" prefWidth="170.0" text="Generar Claves" />
+      <Button id="ButtonVentanaGenerar" fx:id="ButtonBack" layoutX="210.0" layoutY="305.0" mnemonicParsing="false" onAction="#CallShowPrincipal" prefHeight="47.0" prefWidth="170.0" text="Volver " />
+      <Button id="ButtonVentanaGenerar" fx:id="ButtonSave" layoutX="380.0" layoutY="177.0" mnemonicParsing="false" onAction="#CallSavePublicKey" prefHeight="47.0" prefWidth="170.0" text="Exoportar Clave Publica" />
+      <Label fx:id="lblError" layoutX="135.0" layoutY="260.0" prefHeight="17.0" prefWidth="320.0" textFill="#da0e0e" visible="false" />
    </children>
 </AnchorPane>

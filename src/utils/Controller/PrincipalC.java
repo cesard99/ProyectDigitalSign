@@ -11,10 +11,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import utils.service.Controlador;
 
 public class PrincipalC {
     Stage stage = new Stage();
     LoginC controller = new LoginC();
+    Controlador controlador;
 
     @FXML
     private Button ButtonDisconect;
@@ -72,7 +74,7 @@ public class PrincipalC {
         stage.setTitle("Ventana Firma");
         Image icon = new Image("/Img/firma.jpg");
         stage.getIcons().add(icon);
-        controller.init(stage,this);
+        controller.init(stage,this,controlador);
         stage.show();
         this.stage.close();
     }
@@ -110,6 +112,10 @@ public class PrincipalC {
 
     public void show() {
         this.stage.show();
+    }
+    
+    public void sendThisController(Controlador controlador) {
+       this.controlador=controlador;
     }
 
 
